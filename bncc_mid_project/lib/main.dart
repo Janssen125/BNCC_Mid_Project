@@ -7,11 +7,10 @@ void main() {
   runApp(const MyApp());
 }
 
-// Global variables to store steps, water, and step records
 int steps = 0;
 double water = 0.0;
-Map<String, int> stepRecords = {}; // Store step data persistently
-Map<String, double> waterRecords = {}; // Store step data persistently
+Map<String, int> stepRecords = {};
+Map<String, double> waterRecords = {};
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -172,7 +171,7 @@ class _StepsScreenState extends State<StepsScreen> {
                 if (newSteps > 0) {
                   setState(() {
                     steps +=
-                        newSteps - stepRecords[date]!; // Adjust total steps
+                        newSteps - stepRecords[date]!;
                     stepRecords[date] = newSteps;
                   });
                   widget.updateSteps(steps);
